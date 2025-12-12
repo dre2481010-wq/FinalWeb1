@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Posts Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/imgbiodata/android-chrome-512x512.png">
+</head>
+
+<body class="bg-gray-900 min-h-screen text-gray-800">
+
+  <header>
+    <div>
+        <div class="text-white flex justify-end pr-6 p-5 bg-gray-900">
+            <h3>Shell Global</h3>
+        </div>
+    </div>
+        <div class="container mx-auto flex-col pt-3 bg-gray-800">
+            <nav class="flex items-center space-x-7 p-3x">
+                <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
+                <ul class="flex gap-6 text-white">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="biodata.html">Biodata</a></li>
+                    <li><a href="Contactus.html">Contact Page</a></li>
+                    <li><a href="freepage.html">Skils</a></li>
+                    <li><a href="https://fti.unai.edu/">FTI UNAI</a></li>
+                    <li><a href="https://unai.edu/">UNAI</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <div class="text-center mb-10">
+      <button 
+        onclick="fetchPost()" 
+        class="px-8 py-3 bg-gray-800 text-white rounded-xl text-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition cursor-pointer">
+        Load Post (NIM)
+      </button>
+    </div>
+
+    <div id="postContainer" class="grid grid-cols-1 sm:grid-cols-1 gap-8"></div>
+
+    <div id="loading" class="hidden text-center text-gray-600 mt-6 text-lg">
+      <div class="animate-spin w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full mx-auto"></div>
+      <p class="mt-2">Fetching data...</p>
+    </div>
+
+    <div id="errorMessage" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+      Gagal mengambil data dari API. Periksa koneksi atau URL.
+    </div>
+
+  </div>
+
+  <script>
+    const postContainer = document.getElementById("postContainer");
+    const loading = document.getElementById("loading");
+    const errorMessage = document.getElementById("errorMessage");
+
+    const nimLastTwo = 23;
+    const url = `https://jsonplaceholder.typicode.com/posts/${nimLastTwo}`;
+
+    async function fetchPost() {
+      loading.classList.remove("hidden");
+      errorMessage.classList.add("hidden");
+      postContainer.innerHTML = "";
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("API Error");
+
+        const data = await response.json();
+        loading.classList.add("hidden");
+
+        const card = document.createElement("div");
+        card.className =
+          "bg-yellow-400 backdrop-blur-sm border border-yellow-400 p-8 rounded-3xl shadow-lg hover:shadow-xl transition duration-300 hover:scale-105 hover:-translate-y-2 cursor-pointer";
+
+        card.innerHTML = `
+          <div class="mb-3">
+            <span class="text-sm text-gray-400">Post ID:</span>
+            <span class="font-semibold text-gray-700">${data.id}</span>
+          </div>
+
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">${data.title}</h2>
+
+          <p class="text-gray-700 leading-relaxed">${data.body}</p>
+        `;
+
+        postContainer.appendChild(card);
+
+      } catch (err) {
+        loading.classList.add("hidden");
+        errorMessage.classList.remove("hidden");
+      }
+    }
+  </script>
+
+  <footer class="bg-gray-900 text-white px-8 py-16">
+    <p class="text-sm opacity-80 mb-12">
+        Page last updated: 27 Nov 2025
+    </p>
+    <div class="flex flex-col lg:flex-row justify-between gap-16">
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Explore Shell.com</h3>
+
+            <ul class="space-y-3 opacity-90 text-sm">
+                <li>Our strategy</li>
+                <li>Our values</li>
+                <li>Our climate target</li>
+                <li>Our stories</li>
+                <li>UK Modern Slavery Act</li>
+                <li>Cautionary note</li>
+            </ul>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Can we help?</h3>
+
+            <ul class="space-y-3 opacity-90 text-sm">
+                <li>Contact us</li>
+                <li>Job search</li>
+                <li>Shell Global Helpline</li>
+            </ul>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Connect with us</h3>
+            <ul class="space-y-4 opacity-90 text-sm stroke-white">
+                <li class="flex items-center gap-3">
+                    <span><img src="img/imghome/download.svg" alt="instagram"></span> Instagram <span><img src="img/imghome/download (3).svg" alt=""></span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span><img src="img/imghome/download (1).svg" alt=""></span> YouTube <span><img src="img/imghome/download (3).svg" alt=""></span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span><img src="img/imghome/download (2).svg" alt=""></span> Facebook <span><img src="img/imghome/download (3).svg" alt=""></span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span><img src="img/imghome/download (4).svg" alt="" class=""></span> LinkedIn <span><img src="img/imghome/download (3).svg" alt=""></span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span><img src="img/imghome/download (5).svg" alt=""></span> X <span><img src="img/imghome/download (3).svg" alt=""></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        class="flex flex-col md:flex-row md:flex-wrap gap-6 text-sm opacity-75 mt-16 border-t border-white/10 pt-10">
+        <span class="mr-8 cursor-pointer">Accessibility</span>
+        <span class="mr-8 cursor-pointer">Terms and conditions</span>
+        <span class="mr-8 cursor-pointer">Privacy notices</span>
+        <span class="mr-8 cursor-pointer">Cookie policy</span>
+        <span class="mr-8 cursor-pointer">Fraud and scam alert</span>
+        <span class="mr-8 cursor-pointer">Contact us</span>
+        <span class="mr-8 cursor-pointer">Modify cookie preferences</span>
+
+    </div>
+</footer>
+
+</body>
+</html>
