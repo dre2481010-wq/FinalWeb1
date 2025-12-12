@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-800">
+
+    <header>
+    <div>
+        <div class="text-white flex justify-end pr-6 p-5 bg-gray-900">
+            <h3>Shell Global</h3>
+        </div>
+    </div>
+        <div class="container mx-auto flex-col pt-3">
+            <nav class="flex items-center space-x-7 p-3x">
+                <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
+                <ul class="flex gap-6 text-white">
+                    <li><a href="">Home</a></li>
+                    <li><a href="biodata.html">Biodata</a></li>
+                    <li><a href="">Contact Page</a></li>
+                    <li><a href="">Free Content Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="border-t border-gray-400"></div>
+
+  <div class="max-w-2xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold text-center text-white">Registration Form</h1>
+
+    <div id="successMessage" class="hidden mt-6 bg-gray-800 border border-green-400 text-green-700 px-4 py-3 rounded">
+      <strong class="font-bold">Berhasil!</strong>
+      <span class="block sm:inline"> Pendaftaran berhasil dikirim.</span>
+    </div>
+
+    <div class="mt-8 shadow-xl rounded-2xl p-8 bg-yellow-400 text-gray-900">
+      <h2 class="text-xl font-semibold text-gray-900 mb-5">Informasi Pribadi</h2>
+      <div class="flex flex-col md:flex-row gap-4 mb-4">
+        <div class="flex-1">
+          <label class="text-sm font-medium text-gray-900">Full Name</label>
+          <input id="fullName" type="text" placeholder="Masukkan nama lengkap"
+            class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900  focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+        </div>
+        <div class="flex-1">
+          <label class="text-sm font-medium text-gray-900">Student ID (NIM)</label>
+          <input id="studentId" type="text" placeholder="Contoh: 24810xx"
+            class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="text-sm font-medium text-gray-900">Email Address</label>
+        <input id="email" type="email" placeholder="nim@univ.edu"
+          class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 mb-4">
+        <div class="flex-1">
+          <label class="text-sm font-medium text-gray-900">Faculty/Major</label>
+          <select id="faculty"
+            class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+            <option value="">Pilih Jurusanmu</option>
+            <option>Teknik Informatika</option>
+            <option>Sistem Informasi</option>
+            <option>Manajemen</option>
+            <option>Akuntansi</option>
+            <option>Keperawatan</option>
+            <option>Farmasi</option>
+          </select>
+        </div>
+        <div class="flex-1">
+          <label class="text-sm font-medium text-gray-900">Date of Birth</label>
+          <input id="dob" type="date"
+            class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="text-sm font-medium text-gray-900">Gender</label>
+        <div class="flex gap-6 mt-2">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input id="male" name="gender" type="radio" value="Male"
+              class="w-4 h-4 text-gray-900">
+            <span>Male</span>
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input id="female" name="gender" type="radio" value="Female"
+              class="w-4 h-4 text-gray-900">
+            <span>Female</span>
+          </label>
+        </div>
+      </div>
+      <h2 class="text-xl font-semibold text-gray-900 mb-4">Informasi Kontak</h2>
+
+      <div class="mb-4">
+        <label class="text-sm font-medium text-gray-900">Address</label>
+        <textarea id="address" rows="3" placeholder="Masukkan alamat lengkap"
+          class="w-full mt-1 px-3 py-2 rounded-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none resize-none"></textarea>
+      </div>
+
+      <div class="mb-6">
+        <label class="text-sm font-medium text-gray-900">Phone Number</label>
+        <div class="flex mt-1">
+          <span class="px-3 py-2 bg-yellow-400 border border-r-0 border-gray-900 rounded-l-lg">+62</span>
+          <input id="phoneNumber" type="text" placeholder="8123456789"
+            class="flex-1 px-3 py-2 rounded-r-lg border border-gray-900 focus:ring-2 focus:ring-gray-800 focus:border-gray-500 outline-none">
+        </div>
+      </div>
+      <button onclick="submitForm()"
+        class="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 rounded-lg shadow-md transition cursor-pointer">
+        Kirim Pendaftaran
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function submitForm() {
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const studentId = document.getElementById("studentId").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const faculty = document.getElementById("faculty").value.trim();
+      const dob = document.getElementById("dob").value.trim();
+      const gender = document.querySelector("input[name='gender']:checked");
+      const address = document.getElementById("address").value.trim();
+      const phone = document.getElementById("phoneNumber").value.trim();
+
+      if (!fullName || !studentId || !email || !faculty || !dob || !gender || !address || !phone) {
+        alert("Semua field harus diisi!");
+        return;
+      }
+
+      const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Email tidak valid.");
+        return;
+      }
+
+      const phonePattern = /^[0-9]+$/;
+      if (!phonePattern.test(phone) || phone.length < 10) {
+        alert("Nomor telepon harus angka dan minimal 10 digit.");
+        return;
+      }
+
+      document.getElementById("successMessage").classList.remove("hidden");
+
+      setTimeout(() => {
+        document.getElementById("successMessage").classList.add("hidden");
+      }, 2500);
+
+      document.querySelector("form");
+
+      document.getElementById("fullName").value = "";
+      document.getElementById("studentId").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("faculty").value = "";
+      document.getElementById("dob").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("phoneNumber").value = "";
+      if (gender) gender.checked = false;
+    }
+  </script>
+
+  <footer class="bg-gray-900 text-white px-8 py-16">
+    <p class="text-sm opacity-80 mb-12">
+        Page last updated: 27 Nov 2025
+    </p>
+    <div class="flex flex-col lg:flex-row justify-between gap-16">
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Explore Shell.com</h3>
+
+            <ul class="space-y-3 opacity-90 text-sm">
+                <li>Our strategy</li>
+                <li>Our values</li>
+                <li>Our climate target</li>
+                <li>Our stories</li>
+                <li>UK Modern Slavery Act</li>
+                <li>Cautionary note</li>
+            </ul>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Can we help?</h3>
+
+            <ul class="space-y-3 opacity-90 text-sm">
+                <li>Contact us</li>
+                <li>Job search</li>
+                <li>Shell Global Helpline</li>
+            </ul>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-6">Connect with us</h3>
+                <ul class="space-y-4 opacity-90 text-sm stroke-white">
+                    <li class="flex items-center gap-3">
+                        <span><img src="img/imghome/download.svg" alt="instagram"></span> Instagram <span><img src="img/imghome/download (3).svg" alt=""></span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span><img src="img/imghome/download (1).svg" alt=""></span> YouTube <span><img src="img/imghome/download (3).svg" alt=""></span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span><img src="img/imghome/download (2).svg" alt=""></span> Facebook <span><img src="img/imghome/download (3).svg" alt=""></span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span><img src="img/imghome/download (4).svg" alt="" class=""></span> LinkedIn <span><img src="img/imghome/download (3).svg" alt=""></span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span><img src="img/imghome/download (5).svg" alt=""></span> X <span><img src="img/imghome/download (3).svg" alt=""></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row md:flex-wrap gap-6 text-sm opacity-75 mt-16 border-t border-white/10 pt-10">
+            <span class="mr-8 cursor-pointer">Accessibility</span>
+            <span class="mr-8 cursor-pointer">Terms and conditions</span>
+            <span class="mr-8 cursor-pointer">Privacy notices</span>
+            <span class="mr-8 cursor-pointer">Cookie policy</span>
+            <span class="mr-8 cursor-pointer">Fraud and scam alert</span>
+            <span class="mr-8 cursor-pointer">Contact us</span>
+            <span class="mr-8 cursor-pointer">Modify cookie preferences</span>
+
+        </div>
+    </footer>
+
+</body>
+</html>
