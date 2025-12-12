@@ -10,27 +10,36 @@
 </head>
 
 <body class="bg-gray-800">
-   <header>
+<header>
     <div>
         <div class="text-white flex justify-end pr-6 p-5 bg-gray-900">
             <h3>Shell Global</h3>
         </div>
     </div>
-        <div class="container mx-auto flex-col pt-3">
-            <nav class="flex items-center space-x-7 p-3x">
+
+    <div class="container mx-auto pt-3">
+        <nav class="flex flex-col md:flex-row md:items-center md:space-x-7 p-3">
+
+            <div class="flex items-center justify-between w-full md:w-auto px-4 md:px-0">
                 <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
-                <ul class="flex gap-6 text-white">
-                    <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="index.html">Home</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="post.html">JSON</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+                <button id="menuBtn" class="md:hidden text-white text-3xl">
+                    ☰
+                </button>
+            </div>
+
+            <ul id="menuList" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 text-white w-full md:w-auto px-4 md:px-0">
+                <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="index.html">Home</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="post.html">JSON</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <div class="border-t border-gray-400"></div> 
     <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 pb-7 ml-4 mt-5">
         <div class="relative flex-1 rounded-3xl overflow-hidden">
@@ -108,22 +117,24 @@
         </div>
     </div>
 
-    <div class="bg-gray-800">
-        <h1 class="text-3xl text-white font-bold p-10 pb-3 pt-20">How can we help?</h1>
-        <div class="bg-yellow-400 rounded-2xl h-20 p-4">
-            <div class="flex justify-between items-center text-yellow-300 font-semibold">
-                <div class="bg-gray-800 rounded-xl p-2.5 w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer">
-                    <p>Job Search</p>    
-                </div>
-                <div class="bg-gray-800 rounded-xl p-2.5 w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer">
-                    <p>Shell station locator</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-2.5 w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer">
-                    <p>Shell Card</p>
-                </div>
+<div class="bg-gray-800">
+    <h1 class="text-3xl text-white font-bold p-10 pb-3 pt-20">How can we help?</h1>
+    <div class="bg-yellow-400 rounded-2xl h-auto md:h-20 p-4">
+        <div class="flex flex-col md:flex-row justify-between items-center text-yellow-300 font-semibold gap-3 md:gap-0">
+            <div class="bg-gray-800 rounded-xl p-2.5 w-full md:w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer text-center">
+                <p>Job Search</p>    
+            </div>
+            <div class="bg-gray-800 rounded-xl p-2.5 w-full md:w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer text-center">
+                <p>Shell station locator</p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-2.5 w-full md:w-100 hover:text-gray-800 hover:bg-yellow-400 hover:border-grey-800 border-2 cursor-pointer text-center">
+                <p>Shell Card</p>
             </div>
         </div>
     </div>
+</div>
+
+
     <div class="bg-gray-800 mb-10">
         <h1 class="text-3xl font-bold text-white pl-10 p-10">Latest news</h1>
         <div class="p-5">

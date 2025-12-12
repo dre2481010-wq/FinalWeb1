@@ -10,27 +10,36 @@
 
 <body class="bg-gray-800 min-h-screen text-gray-900">
 
-<header>
+    <header>
     <div>
         <div class="text-white flex justify-end pr-6 p-5 bg-gray-900">
             <h3>Shell Global</h3>
         </div>
     </div>
-        <div class="container mx-auto flex-col pt-3">
-            <nav class="flex items-center space-x-7 p-3x">
+
+    <div class="container mx-auto pt-3">
+        <nav class="flex flex-col md:flex-row md:items-center md:space-x-7 p-3">
+
+            <div class="flex items-center justify-between w-full md:w-auto px-4 md:px-0">
                 <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
-                <ul class="flex gap-6 text-white">
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="index.html">Home</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="post.html">JSON</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-                    <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
-                </ul>
-            </nav>
-        </div>
-  </header>
+
+                <button id="menuBtn" class="md:hidden text-white text-3xl">
+                    ☰
+                </button>
+            </div>
+
+            <ul id="menuList" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 text-white w-full md:w-auto px-4 md:px-0">
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="index.html">Home</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="post.html">JSON</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
+                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
   <div class="border-t border-gray-400"></div> 
 
