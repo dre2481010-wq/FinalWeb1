@@ -18,27 +18,38 @@
     </div>
 
     <div class="container mx-auto pt-3">
-        <nav class="flex flex-col md:flex-row md:items-center md:space-x-7 p-3">
+    <nav class="flex flex-col md:flex-row md:items-center md:space-x-7 p-3">
 
-            <div class="flex items-center justify-between w-full md:w-auto px-4 md:px-0">
-                <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
+        <div class="flex items-center justify-between w-full md:w-auto px-4 md:px-0">
+            <img src="img/imghome/OIP.png" alt="logo shell" class="w-16">
 
-                <button id="menuBtn" class="md:hidden text-white text-3xl">
-                    ☰
-                </button>
-            </div>
+            <button id="menuBtn" class="md:hidden text-white text-3xl">
+                ☰
+            </button>
+        </div>
 
-            <ul id="menuList" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 text-white w-full md:w-auto px-4 md:px-0">
-                <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="index.html">Home</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="post.html">JSON</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-                <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
-            </ul>
-        </nav>
-    </div>
+        <ul id="menuList" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 text-white w-full md:w-auto px-4 md:px-0">
+            <li class="hover:bg-gray-700 cursor-pointer p-5 border-b-2 border-yellow-400"><a href="index.html">Home</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="biodata.html">Biodata</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="Contactus.html">Contact Page</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="post.html">JSON</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="freepage.html">Skils</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
+            <li class="hover:bg-gray-700 cursor-pointer p-5"><a href="https://unai.edu/">UNAI</a></li>
+        </ul>
+
+    </nav>
+</div>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const list = document.getElementById("menuList");
+
+    btn.addEventListener("click", () => {
+        list.classList.toggle("hidden");
+    });
+</script>
+
 </header>
     <div class="border-t border-gray-400"></div> 
     <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 pb-7 ml-4 mt-5">
